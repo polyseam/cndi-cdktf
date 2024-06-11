@@ -1,0 +1,14 @@
+{
+  "name": "@cndi/cdktf",
+  "version": "0.1.0",
+  "tasks": {
+    "build": "npx -y cdktf-cli get && mv .gen dist"
+  },
+  "exports": {
+    "!": "main.ts"
+  },
+  "publish": {
+    "exclude": ["!dist"],
+    "include": ["dist/**/*.ts"]
+  }
+}

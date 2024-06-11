@@ -1,4 +1,4 @@
-# super-module-maker
+# [@cndi/cdktf](https://jsr.io/@cndi/cdktf)
 
 ## goals
 
@@ -90,7 +90,7 @@ and types, we could just write Terraform JSON and manipulate the JSON directly
 Really this solution isn't _that regressive_ because the cdktf modules are still
 better than string interpolation, but not by much.
 
-### super-module-maker
+### @cndi/cdktf
 
 The next solution is why we are all here.
 
@@ -103,7 +103,7 @@ download.
 What if we maintain a repository and build system which generates the CDKTF
 packages we rely on and publishes them to a registry?
 
-This is the goal of `super-module-maker`. It has a JSON configuration file which
+This is the goal of `@cndi/cdktf`. It has a JSON configuration file which
 specifies the modules we want to build, and the versions we want to build them
 at. It will then build the modules and publish them to a registry.
 
@@ -115,7 +115,7 @@ local disk at runtime.
 
 CNDI still pulls in all the required terraform modules at build time, but it
 does so using vendored versions of the modules which are built and published by
-`super-module-maker` using the `cdktf` toolkit.
+`@cndi/cdktf` using the `cdktf` toolkit.
 
 It is not yet clear if this vendoring and publishing process can also do
 tree-shaking and code-splitting, but it seems plausible.

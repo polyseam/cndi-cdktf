@@ -1,0 +1,27 @@
+{
+  "language": "typescript",
+  "app": "deno run -A main.ts",
+  "sendCrashReports": "false",
+  "terraformProviders": [
+    "aws@5.48.0",
+    "azurerm@3.102.0",
+    "google@5.7.0",
+    "helm@2.13.2",
+    "kubernetes@2.30.0",
+    "random@3.6.1",
+    "time@0.11.1",
+    "tls@4.0.5"
+  ],
+  "terraformModules": [
+    {
+      "name": "vpc",
+      "source": "terraform-aws-modules/vpc/aws"
+    },
+    {
+      "name": "eks",
+      "source": "terraform-aws-modules/eks/aws"
+    }
+  ],
+  "context": {},
+  "projectId": "91647ccb-d062-4f34-b901-1c42e311781c"
+}
