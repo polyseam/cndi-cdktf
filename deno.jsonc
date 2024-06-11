@@ -1,6 +1,6 @@
 {
   "name": "@cndi/cdktf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "tasks": {
     "build": "npx -y cdktf-cli get && rm -rf dist && mv ./.gen/ ./dist"
   },
