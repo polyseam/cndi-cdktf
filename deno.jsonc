@@ -5,10 +5,11 @@
     "build": "npx -y cdktf-cli get && rm -rf dist && mv ./.gen/ ./dist"
   },
   "exports": {
-    "./_error": "./_error.ts"
+    "./modules/aws-eks.ts": "./dist/modules/aws-eks.ts",
+    "./modules/aws-iam-assumable-role-with-oidc.ts": "./dist/modules/aws-iam-assumable-role-with-oidc.ts",
+    "./modules/aws-vpc.ts": "./dist/modules/aws-vpc.ts"
   },
   "publish": {
-    "exclude": ["!dist"],
-    "include": ["dist/**/*.ts", "_error.ts"]
+    "exclude": ["!dist/modules/*.ts"]
   }
 }

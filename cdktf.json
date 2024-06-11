@@ -1,6 +1,6 @@
 {
   "language": "typescript",
-  "app": "deno run -A main.ts",
+  "app": "deno run -A barrel.ts",
   "sendCrashReports": "false",
   "terraformProviders": [
     "aws@5.48.0",
@@ -14,16 +14,17 @@
   ],
   "terraformModules": [
     {
-      "name": "vpc",
+      "name": "aws-vpc",
       "source": "terraform-aws-modules/vpc/aws"
     },
     {
-      "name": "eks",
+      "name": "aws-eks",
       "source": "terraform-aws-modules/eks/aws"
     },
     {
-      "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc",
-      "name": "iam-assumable-role-with-oidc"
+      
+      "name": "aws-iam-assumable-role-with-oidc",
+      "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
     }
   ],
   "context": {},
