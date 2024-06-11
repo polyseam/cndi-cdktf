@@ -20,6 +20,10 @@
     {
       "name": "eks",
       "source": "terraform-aws-modules/eks/aws"
+    },
+    {
+      "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc",
+      "name": "iam-assumable-role-with-oidc"
     }
   ],
   "context": {},

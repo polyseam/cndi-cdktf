@@ -2,7 +2,7 @@
   "name": "@cndi/cdktf",
   "version": "0.1.0",
   "tasks": {
-    "build": "npx -y cdktf-cli get && mv .gen dist"
+    "build": "npx -y cdktf-cli get && rm -rf dist && mv ./.gen/ ./dist"
   },
   "exports": {
     "./_error": "./_error.ts"
