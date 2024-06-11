@@ -22,7 +22,6 @@
       "source": "terraform-aws-modules/eks/aws"
     },
     {
-      
       "name": "aws-iam-assumable-role-with-oidc",
       "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
     }
