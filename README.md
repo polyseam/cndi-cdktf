@@ -48,15 +48,16 @@ can be used to create an AWS EKS.
 
 1. The CLI is large, especially relative to it's _potential_ size (we've seen it
    smaller with comparable functionality by writing out Terraform objects with
-   no CDKTF API)
+   no CDKTF API, see
+   [v1.16.0](https://github.com/polyseam/cndi/tree/v1.16.0/src/outputs/terraform/aws-eks))
 2. The `cndi ow` command is slow because it must load all the APIs into memory
-   ([johnstonmatt](https://github.com/johnstonmatt) thinks)
 3. [Terraform Modules](https://developer.hashicorp.com/terraform/cdktf/concepts/modules)
    have been avoided, locking us out of their often simpler and better supported
    APIs
-4. CNDI's extensibility is done through [Terraform Passthrough]() which
-   effectively takes the `cndi/terraform/cdk.tf.json` we generate for you, then
-   deep merging the object found in your config:
+4. CNDI's extensibility is done through
+   [Terraform Passthru](https://github.com/polyseam/cndi/blob/main/docs/terraform-passthru.md)
+   which effectively takes the `cndi/terraform/cdk.tf.json` we generate for you,
+   then deep merging the object found in your config:
    `cndi_config.yaml[infrastructure][terraform]` object. This means that CNDI
    core developers have access to elegant typescript APIs, but CNDI users deal
    with a workaround when the core funcationality is insufficient.
@@ -105,6 +106,11 @@ does so using vendored versions of the modules which are built and published by
 
 It is not yet clear if this vendoring and publishing process can also do
 tree-shaking and code-splitting, but it seems plausible.
+
+This solution doesn't expose a better API as a successor to Terraform
+Passthrough. The user still doesn't have access to the rich expressivity of the
+CDKTF API. Maybe we tackle this in CNDI v3. Maybe that typescript-centric API is
+also synergistic with Typescript FaaS?
 
 ## why now?
 
