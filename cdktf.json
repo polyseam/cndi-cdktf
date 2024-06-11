@@ -24,6 +24,10 @@
     {
       "name": "aws-iam-assumable-role-with-oidc",
       "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
+    },
+    {
+      "name": "aws-eks-managed-node-group",
+      "source": "terraform-aws-modules/eks/aws//modules/eks-managed-node-group"
     }
   ],
   "context": {},

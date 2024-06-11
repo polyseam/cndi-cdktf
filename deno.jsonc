@@ -1,12 +1,13 @@
 {
   "name": "@cndi/cdktf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tasks": {
     "build": "npx -y cdktf-cli get && rm -rf dist && mv ./.gen/ ./dist"
   },
   "exports": {
     "./modules/aws-eks.ts": "./dist/modules/aws-eks.ts",
     "./modules/aws-iam-assumable-role-with-oidc.ts": "./dist/modules/aws-iam-assumable-role-with-oidc.ts",
+    "./modules/aws-eks-managed-node-group.ts": "./dist/modules/aws-eks-managed-node-group.ts",
     "./modules/aws-vpc.ts": "./dist/modules/aws-vpc.ts"
   },
   "publish": {
