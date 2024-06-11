@@ -5,7 +5,7 @@
     "build": "npx -y cdktf-cli get && mv .gen dist"
   },
   "exports": {
-    "!": "./main.ts"
+    "./error": "./main.ts"
   },
   "publish": {
     "exclude": ["!dist"],
