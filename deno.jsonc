@@ -5,10 +5,10 @@
     "build": "npx -y cdktf-cli get && mv .gen dist"
   },
   "exports": {
-    "./error": "./main.ts"
+    "./_error": "./_error.ts"
   },
   "publish": {
     "exclude": ["!dist"],
-    "include": ["dist/**/*.ts"]
+    "include": ["dist/**/*.ts", "error.ts"]
   }
 }
