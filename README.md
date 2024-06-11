@@ -1,5 +1,12 @@
 # super-module-maker
 
+## goals
+
+- enable use of Terraform Modules in CNDI
+- reduce the size of the CNDI CLI in bytes
+- reduce the complexity of the CNDI CLI in lines of code
+- reduce the distance between the CNDI toolchain and the rest of the ecosystem
+
 ## background
 
 [polyseam/cndi](https://github.com/polyseam/cndi) creates cloud infrastructure
@@ -47,8 +54,14 @@ can be used to create an AWS EKS.
 3. [Terraform Modules](https://developer.hashicorp.com/terraform/cdktf/concepts/modules)
    have been avoided, locking us out of their often simpler and better supported
    APIs
+4. CNDI's extensibility is done through [Terraform Passthrough]() which
+   effectively takes the `cndi/terraform/cdk.tf.json` we generate for you, then
+   deep merging the object found in your config:
+   `cndi_config.yaml[infrastructure][terraform]` object. This means that CNDI
+   core developers have access to elegant typescript APIs, but CNDI users deal
+   with a workaround when the core funcationality is insufficient.
 
-## to enable Terraform Modules
+## solving for the limitations
 
 ### `TerraformHclModule`
 
@@ -59,6 +72,9 @@ escape hatch because it cannot provide Type Safety or Intellisense. This may not
 seem like a big thing, but if we wanted to write Terraform without the CDKTF API
 and types, we could just write Terraform JSON and manipulate the JSON directly
 [like we used to!](https://github.com/polyseam/cndi/tree/v1.16.0/src/outputs/terraform/aws-eks).
+
+Really this solution isn't _that regressive_ because the cdktf modules are still
+better than string interpolation, but not by much.
 
 ### super-module-maker
 
