@@ -9,6 +9,6 @@
   },
   "publish": {
     "exclude": ["!dist"],
-    "include": ["dist/**/*.ts", "error.ts"]
+    "include": ["dist/**/*.ts", "_error.ts"]
   }
 }
