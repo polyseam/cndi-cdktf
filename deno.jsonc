@@ -11,5 +11,9 @@
   },
   "publish": {
     "exclude": ["!dist/modules/*.ts"]
+  },
+  "imports": {
+    "cdktf": "npm:cdktf@0.20.7",
+    "constructs": "npm:constructs@10.3.0"
   }
 }
