@@ -10,6 +10,12 @@
     "./modules/aws-eks-managed-node-group.ts": "./dist/modules/aws-eks-managed-node-group.ts",
     "./modules/aws-vpc.ts": "./dist/modules/aws-vpc.ts"
   },
+  "fmt": {
+    "exclude": ["dist"]
+  },
+  "lint": {
+    "exclude": ["dist"]
+  },
   "publish": {
     "exclude": ["!dist/modules/*.ts"]
   },
