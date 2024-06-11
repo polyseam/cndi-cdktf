@@ -5,18 +5,20 @@
 - enable use of Terraform Modules in CNDI
 - reduce the size of the CNDI CLI in bytes
 - reduce the complexity of the CNDI CLI in lines of code
-- reduce the distance between the CNDI toolchain and the rest of the cdktf ecosystem
+- reduce the distance between the CNDI toolchain and the rest of the cdktf
+  ecosystem
 
 ## why now?
 
 As we were going to build support for CNDI's keyless authentication, we found
-the [aws/eks CNDI deployment target](https://github.com/polyseam/cndi/blob/main/src/outputs/terraform/aws/AWSEKSStack.ts) included a ton of boilerplate especially
-related to authorization, which is quite sensitive.
+the
+[aws/eks CNDI deployment target](https://github.com/polyseam/cndi/blob/main/src/outputs/terraform/aws/AWSEKSStack.ts)
+included a ton of boilerplate especially related to authorization, which is
+quite sensitive.
 
 If we can meaningfully reduce the footprint of our implementation, we can reduce
 the surface area of the code which needs to be carefully and securely
 maintained.
-
 
 ## background
 
@@ -122,4 +124,3 @@ This solution doesn't expose a better API as a successor to Terraform
 Passthrough. The user still doesn't have access to the rich expressivity of the
 CDKTF API. Maybe we tackle this in CNDI v3. Maybe that typescript-centric API is
 also synergistic with Typescript FaaS?
-
