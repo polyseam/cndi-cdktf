@@ -29,12 +29,13 @@ The [cndi](https://github.com/polyseam/cndi) CLI does this by importing every
 required Typescript API for each
 [Terraform Provider](https://registry.terraform.io/browse/providers) we support.
 
-There's a map of our provider dependencies here in
-[./providers.jsonc](./providers.jsonc).
+There's a map of our provider and module dependencies here in
+[./cdktf.json](./cdktf.json).
 
-The CLI is built with [Deno](https://github.com/denoland/deno) and supposedly
-the package ecosystem is such that unused code cannot be tree-shaken, because
-static analysis cannot determine whether there are side-effects from imports.
+The `cndi` CLI is built with [Deno](https://github.com/denoland/deno) and
+supposedly the package ecosystem is such that unused code cannot be tree-shaken,
+because static analysis cannot determine whether there are side-effects from
+imports.
 [I'd love to be wrong about this](https://github.com/polyseam/cndi/issues/929).
 
 One side effect of this is that the CLI is quite large, and the user has to
@@ -77,22 +78,7 @@ can be used to create an AWS EKS.
 
 ## solving for the limitations
 
-### `TerraformHclModule`
-
-One option to enable the consumption of
-[Terraform Modules](https://developer.hashicorp.com/terraform/cdktf/concepts/modules#:~:text=The%20following%20example%20uses%20TerraformHclModule%20to%20import%20an%20AWS%20module.s)
-is to use the `TerraformHclModule` class in the CDKTF API. This is really an
-escape hatch because it cannot provide Type Safety or Intellisense. This may not
-seem like a big thing, but if we wanted to write Terraform without the CDKTF API
-and types, we could just write Terraform JSON and manipulate the JSON directly
-[like we used to!](https://github.com/polyseam/cndi/tree/v1.16.0/src/outputs/terraform/aws-eks).
-
-Really this solution isn't _that regressive_ because the cdktf modules are still
-better than string interpolation, but not by much.
-
 ### @cndi/cdktf
-
-The next solution is why we are all here.
 
 We know that there are some CDKTF modules we would like to use, like the
 [aws-eks module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest).
@@ -120,7 +106,7 @@ does so using vendored versions of the modules which are built and published by
 It is not yet clear if this vendoring and publishing process can also do
 tree-shaking and code-splitting, but it seems plausible.
 
-This solution doesn't expose a better API as a successor to Terraform
-Passthrough. The user still doesn't have access to the rich expressivity of the
-CDKTF API. Maybe we tackle this in CNDI v3. Maybe that typescript-centric API is
-also synergistic with Typescript FaaS?
+This solution doesn't expose a better API as a successor to Terraform Passthru.
+The user still doesn't have access to the rich expressivity of the CDKTF API.
+Maybe we tackle this in CNDI v3. Maybe that typescript-centric API is also
+synergistic with Typescript FaaS?
