@@ -3,7 +3,7 @@
   "app": "deno run -A barrel.ts",
   "sendCrashReports": "false",
   "terraformProviders": [
-    "aws@5.48.0",
+    "aws@5.83.1",
     "azurerm@3.102.0",
     "google@5.7.0",
     "helm@2.13.2",
