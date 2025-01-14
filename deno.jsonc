@@ -1,6 +1,7 @@
 {
   "name": "@cndi/cdktf",
   "version": "0.3.0",
+  "node_version": "20",
   "tasks": {
     "build": "npx -y cdktf-cli get && rm -rf dist && mv ./.gen/ ./dist"
   },
@@ -19,8 +20,10 @@
   "publish": {
     "exclude": ["!dist/modules/*.ts"]
   },
+  "nodeModulesDir": "auto",
   "imports": {
-    "cdktf": "npm:cdktf@0.20.7",
+    "cdktf": "npm:cdktf@0.20.10",
+    "cdktf-cli": "npm:cdktf-cli@^0.20.11",
     "constructs": "npm:constructs@10.3.0"
   }
 }
