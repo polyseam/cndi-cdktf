@@ -25,5 +25,8 @@
     "cdktf": "npm:cdktf@0.20.10",
     "cdktf-cli": "npm:cdktf-cli@^0.20.11",
     "constructs": "npm:constructs@10.3.0"
+  },
+  "compilerOptions": {
+    "noImplicitOverride": false
   }
 }
