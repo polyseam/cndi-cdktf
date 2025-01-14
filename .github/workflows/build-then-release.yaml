@@ -22,6 +22,6 @@ jobs:
 
       - name: Build
         run: deno task build
-        
+
       - name: Publish package
         run: npx jsr publish --allow-slow-types
