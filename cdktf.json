@@ -15,23 +15,19 @@
   "terraformModules": [
     {
       "name": "aws-vpc",
-      "source": "terraform-aws-modules/vpc/aws",
-      "version": "5.17.0"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=573f574c922782bc658f05523d0c902a4792b0a8"
     },
     {
       "name": "aws-eks",
-      "source": "terraform-aws-modules/eks/aws",
-      "version": "20.31.6"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git?ref=a713f6f464eb579a39918f60f130a5fbb77a6b30"
     },
     {
       "name": "aws-iam-assumable-role-with-oidc",
-      "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc",
-      "version": "5.52.2"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-iam.git//modules/iam-assumable-role-with-oidc?ref=e803e25ce20a6ebd5579e0896f657fa739f6f03e"
     },
     {
       "name": "aws-eks-managed-node-group",
-      "source": "terraform-aws-modules/eks/aws//modules/eks-managed-node-group",
-      "version": "20.31.6"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git//modules/eks-managed-node-group?ref=a713f6f464eb579a39918f60f130a5fbb77a6b30"
     }
   ],
   "context": {},
