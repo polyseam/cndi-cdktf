@@ -110,3 +110,31 @@ This solution doesn't expose a better API as a successor to Terraform Passthru.
 The user still doesn't have access to the rich expressivity of the CDKTF API.
 Maybe we tackle this in CNDI v3. Maybe that typescript-centric API is also
 synergistic with Typescript FaaS?
+
+```jsonc
+{
+  // tags for modules used to set SHAs
+  "terraformModules": [
+    {
+      "name": "aws-vpc",
+      "source": "terraform-aws-modules/vpc/aws",
+      "version": "5.17.0"
+    },
+    {
+      "name": "aws-eks",
+      "source": "terraform-aws-modules/eks/aws",
+      "version": "20.31.6"
+    },
+    {
+      "name": "aws-iam-assumable-role-with-oidc",
+      "source": "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc",
+      "version": "5.52.2"
+    },
+    {
+      "name": "aws-eks-managed-node-group",
+      "source": "terraform-aws-modules/eks/aws//modules/eks-managed-node-group",
+      "version": "20.31.6"
+    }
+  ]
+}
+```
