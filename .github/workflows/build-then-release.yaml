@@ -16,10 +16,11 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.5.5"
+          
       - name: use deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.1.5
+          deno-version: v2.2.8
 
       - uses: actions/checkout@v4
 

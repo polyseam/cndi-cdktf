@@ -15,11 +15,11 @@
   "terraformModules": [
     {
       "name": "aws-vpc",
-      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=573f574c922782bc658f05523d0c902a4792b0a8"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=961c9b51e3ed3959d9419f019e7085c087bf7297"
     },
     {
       "name": "aws-eks",
-      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git?ref=a713f6f464eb579a39918f60f130a5fbb77a6b30"
+      "source": "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git?ref=0b9d27b3ffb500be824bfdbf2b1607887ef6c295"
     },
     {
       "name": "aws-iam-assumable-role-with-oidc",
